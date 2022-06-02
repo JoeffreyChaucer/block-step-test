@@ -30,5 +30,7 @@ echo "steps:"
 
 if [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "develop" ] || [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "main" ] || [[ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" =~ /^release\// ]] || [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "marvel/develop" ] || [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "test_ci" ];
 then
-    echo " - command: buildkite-agent pipeline upload .buildkite/pipeline.yml"
+    #echo " - command: buildkite-agent pipeline upload .buildkite/pipeline.yml"
+    echo "  - command: \"echo Deploy!\""
+    echo "    label: \":rocket:\""
 fi
