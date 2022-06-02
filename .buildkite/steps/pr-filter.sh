@@ -26,6 +26,11 @@ set -euo pipefail
 #echo "$BUILDKITE_PULL_REQUEST_BASE_BRANCH"
 #echo "$BUILDKITE_PULL_REQUEST_DRAFT"
 
+if ! git diff --name-only "$BUILDKITE_PULL_REQUEST_BASE_BRANCH".."$BUILDKITE_COMMIT" | grep -qvE '(.md)'
+then
+    exit
+fi
+
 echo "steps:"
 
 #if [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "develop" ] || [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "main" ];
@@ -36,13 +41,6 @@ echo "steps:"
 #echo "  - command: \"echo Deploy2\""
 #echo "    label: \":rocket:\""
 #fi
-
-
-
-if ! git diff --name-only "$BUILDKITE_PULL_REQUEST_BASE_BRANCH".."$BUILDKITE_COMMIT" | grep -qvE '(.md)'
-then
-    exit
-fi
 
 echo "  - command: \"echo Only doc files were updated, not running the CI.\""
 echo "    label: \":rocket:\""
