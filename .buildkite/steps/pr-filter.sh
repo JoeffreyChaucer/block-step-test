@@ -33,4 +33,6 @@ then
     #echo " - command: buildkite-agent pipeline upload .buildkite/pipeline.yml"
     echo "  - command: \"echo Deploy!\""
     echo "    label: \":rocket:\""
+    echo "  - command: \"echo Deploy2\""
+    echo "    label: \":rocket:\""
 fi
