@@ -24,7 +24,7 @@ set -euo pipefail
 #echo "Running pr-validation pipeline."
 
 echo "$BUILDKITE_PULL_REQUEST_BASE_BRANCH"
-echo "$BUILDKITE_PULL_REQUEST_DRAFT"
+#echo "$BUILDKITE_PULL_REQUEST_DRAFT"
 
 echo "steps:"
 
