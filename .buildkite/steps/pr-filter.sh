@@ -39,7 +39,6 @@ echo "steps:"
 
 if ! git diff --name-only main.."$BUILDKITE_COMMIT" | grep -qvE '(.md)'
 then
-    
     echo "  - command: \"echo Only doc files were updated, not running the CI.\""
     echo "    label: \":rocket:\""
 fi
