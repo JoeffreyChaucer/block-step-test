@@ -37,8 +37,8 @@ echo "steps:"
 #echo "    label: \":rocket:\""
 #fi
 
-echo "  - command: \"hecho Deplo11111\""
-echo "    label: \":rocket:\""
+#echo "  - command: \"echo Deplo11111\""
+#echo "    label: \":rocket:\""
 
 
 if [[ "$BUILDKITE_BRANCH" == "main" ]]; then
