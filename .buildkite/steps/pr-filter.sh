@@ -37,7 +37,7 @@ echo "steps:"
 #echo "    label: \":rocket:\""
 #fi
 
-
+echo "$BUILDKITE_PULL_REQUEST_BASE_BRANCH"
 
 if ! git diff --name-only "$BUILDKITE_PULL_REQUEST_BASE_BRANCH".."$BUILDKITE_COMMIT" | grep -qvE '(.md)'
 then
