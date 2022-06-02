@@ -37,7 +37,7 @@ echo "steps:"
 #echo "    label: \":rocket:\""
 #fi
 
-if ! git diff --name-only "$BUILDKITE_PULL_REQUEST_BASE_BRANCH".."$BUILDKITE_COMMIT" | grep -qvE '(.md)'
+if ! git diff --name-only main.."$BUILDKITE_COMMIT" | grep -qvE '(.md)'
 then
     
     echo "  - command: \"echo Only doc files were updated, not running the CI.\""
