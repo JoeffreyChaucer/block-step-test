@@ -11,17 +11,17 @@ echo "$BUILDKITE_PULL_REQUEST_BASE_BRANCH"
 
 
 
-git diff --stat "$BUILDKITE_PULL_REQUEST_BASE_BRANCH".."$BUILDKITE_COMMIT"
+#git diff --stat "$BUILDKITE_PULL_REQUEST_BASE_BRANCH".."$BUILDKITE_COMMIT"
 
 
-if ! git diff --name-only "$BUILDKITE_PULL_REQUEST_BASE_BRANCH".."$BUILDKITE_COMMIT" | grep -qvE '(.md)'
-then
-    echo "Only doc files were updated, not running the CI."
-    exit
-fi
+#if ! git diff --name-only "$BUILDKITE_PULL_REQUEST_BASE_BRANCH".."$BUILDKITE_COMMIT" | grep -qvE '(.md)'
+#then
+#    echo "Only doc files were updated, not running the CI."
+#    exit
+#fi
 
 
-echo "Running pr-validation pipeline."
+#echo "Running pr-validation pipeline."
 
 echo "$BUILDKITE_PULL_REQUEST_BASE_BRANCH"
 echo "$BUILDKITE_PULL_REQUEST_DRAFT"
