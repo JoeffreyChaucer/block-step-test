@@ -28,7 +28,7 @@ set -euo pipefail
 
 if ! git diff --name-only "$BUILDKITE_PULL_REQUEST_BASE_BRANCH".."$BUILDKITE_COMMIT" | grep -qvE '(.md)'
 then
-    exit
+    echo Only doc files were updated, not running the CI
 fi
 
 echo "steps:"
