@@ -37,8 +37,15 @@ echo "steps:"
 #echo "    label: \":rocket:\""
 #fi
 
-#echo "  - command: \"echo Deplo11111\""
-#echo "    label: \":rocket:\""
+
+
+if ! git diff --name-only "$BUILDKITE_PULL_REQUEST_BASE_BRANCH".."$BUILDKITE_COMMIT" | grep -qvE '(.md)'
+then
+    
+    echo "  - command: \"echo Only doc files were updated, not running the CI.\""
+    echo "    label: \":rocket:\""
+fi
+
 
 
 if [[ "$BUILDKITE_BRANCH" == "main" ]]; then
