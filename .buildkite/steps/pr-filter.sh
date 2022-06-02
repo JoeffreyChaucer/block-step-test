@@ -23,16 +23,23 @@ set -euo pipefail
 
 #echo "Running pr-validation pipeline."
 
-echo "$BUILDKITE_PULL_REQUEST_BASE_BRANCH"
+#echo "$BUILDKITE_PULL_REQUEST_BASE_BRANCH"
 #echo "$BUILDKITE_PULL_REQUEST_DRAFT"
 
 echo "steps:"
 
-if [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "develop" ] || [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "main" ];
-then
-    #echo " - command: buildkite-agent pipeline upload .buildkite/pipeline.yml"
+#if [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "develop" ] || [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "main" ];
+#then
+#echo " - command: buildkite-agent pipeline upload .buildkite/pipeline.yml"
+#echo "  - command: \"echo Deploy!\""
+#echo "    label: \":rocket:\""
+#echo "  - command: \"echo Deploy2\""
+#echo "    label: \":rocket:\""
+#fi
+
+
+f [[ "$BUILDKITE_BRANCH" == "main" ]]; then
+    echo "  - wait"
     echo "  - command: \"echo Deploy!\""
-    echo "    label: \":rocket:\""
-    echo "  - command: \"echo Deploy2\""
     echo "    label: \":rocket:\""
 fi
